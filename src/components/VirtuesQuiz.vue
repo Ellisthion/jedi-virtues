@@ -5,6 +5,7 @@
 </template>
 
 <script setup lang="ts">
+import { questions, virtues } from '../config/virtues';
 </script>
 
 <style lang="scss" scoped>
