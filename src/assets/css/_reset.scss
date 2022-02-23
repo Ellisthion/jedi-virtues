@@ -1,0 +1,39 @@
+@import 'normalize.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+}
+
+a, button, [role='button'] {
+  outline: 0 !important;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+img, svg {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+
+  max-width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+input[type='search'],
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
