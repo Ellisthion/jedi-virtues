@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "array-shuffle": "^3.0.0",
     "normalize.css": "^8.0.1",
     "random-item": "^4.0.1",
     "vue": "^3.2.25"

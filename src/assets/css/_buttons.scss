@@ -1,0 +1,21 @@
+@import 'variables';
+
+button {
+  padding: 1rem;
+  min-width: 10rem;
+
+  color: $yellow;
+  background-color: transparent;
+
+  border: 3px solid $yellow;
+
+  transition: background-color 0.5s, color 0.5s, transform 0.5s;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $yellow;
+    color: $black;
+  }
+}

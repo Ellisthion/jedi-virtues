@@ -1,4 +1,6 @@
 @import 'reset';
+@import 'variables';
+@import 'buttons';
 
 :root {
   font-family: 'Arial Black', Arial, sans-serif;
@@ -8,11 +10,13 @@
 
 html {
   height: 100%;
+
+  font-size: max(11px, 1.5vmin);
 }
 
 body {
-  color: #ffe720;
-  background-color: black;
+  color: $yellow;
+  background-color: $black;
   
   min-height: 100%;
   display: flex;
@@ -25,8 +29,10 @@ body {
   display: flex;
   flex-direction: column;
 
-  max-width: 1024px;
+  width: 100%;
+  max-width: calc(800px + 2rem);
   margin: 0 auto;
+  padding: 0 2rem;
 
   position: relative;
   z-index: 1;
@@ -38,4 +44,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3 {
   text-align: center;
+}
+
+label {
+  display: block;
 }
