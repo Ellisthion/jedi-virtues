@@ -30,10 +30,10 @@
           </transition>
         </div>
 
-        <div v-else>
-          <label>Your result</label>
+        <div class="judgement" v-else>
+          <label>You have been judged. Send this code to your gamemaster.</label>
 
-          <p>{{ resultCode }}</p>
+          <p class="code-result">{{ resultCode }}</p>
         </div>
       </transition>
     </div>
@@ -138,8 +138,10 @@ nextQuestion();
   flex-direction: column;
 }
 
-label {
-  margin-bottom: 0.5rem;
+.question {
+  label {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .choice-container {
@@ -177,6 +179,15 @@ label {
   padding: 1rem;
 }
 
+.judgement {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.code-result {
+  font-size: 2rem;
+}
+
 .fade {
   &-enter-active {
     transition: opacity 0.3s ease-out;
@@ -194,7 +205,7 @@ label {
 
 .fade-delay {
   &-enter-active {
-    transition: opacity 0.3s 0.5s ease-out;
+    transition: opacity 0.3s 0.5s ease-out, visibility 0s 0.5s;
   }
 
   &-leave-active {
@@ -204,12 +215,13 @@ label {
   &-enter-from,
   &-leave-to {
     opacity: 0;
+    visibility: hidden;
   }
 }
 
 .fade-slow {
   &-enter-active {
-    transition: opacity 1s 1.5s ease-out;
+    transition: opacity 1s 1.5s ease-out, visibility 0s 0.5s;
   }
 
   &-leave-active {
@@ -219,6 +231,7 @@ label {
   &-enter-from,
   &-leave-to {
     opacity: 0;
+    visibility: hidden;
   }
 }
 </style>
