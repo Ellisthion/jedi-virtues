@@ -9,23 +9,23 @@
 
       <transition name="fade" mode="out-in" appear v-else>
         <div class="question" :key="currentQuestion.firstVirtue + ' vs ' + currentQuestion.secondVirtue" v-if="currentQuestion">
-          <label>{{ currentQuestion.origPrompt }}</label>
+          <label>{{ currentQuestion.prompt }}</label>
 
           <p>Debug: {{ currentQuestion.firstVirtue }} vs {{ currentQuestion.secondVirtue }}</p>
 
           <div class="choice-container" :class="{ 'chosen': currentChosen != null }">
             <button type="button" class="choice" :class="{ 'active': currentChosen === currentQuestion.firstVirtue }" @click="answerChosen(currentQuestion.firstVirtue, currentQuestion.secondVirtue)">
-              {{ currentQuestion.origFirst }}
+              {{ currentQuestion.first }}
             </button>
 
             <button type="button" class="choice" :class="{ 'active': currentChosen === currentQuestion.secondVirtue }" @click="answerChosen(currentQuestion.secondVirtue, currentQuestion.firstVirtue)">
-              {{ currentQuestion.origSecond }}
+              {{ currentQuestion.second }}
             </button>
           </div>
 
           <transition name="fade-delay" appear>
             <div class="after-choice" v-if="currentChosen">
-              <div>Debug: You have chosen {{ currentChosen }}</div>
+              <p>{{ currentChosen === currentQuestion.firstVirtue ? currentQuestion.firstConsequence : currentQuestion.secondConsequence }}</p>
 
               <transition name="fade-slow" appear>
                 <button type="button" @click="nextQuestion()">Next</button>
@@ -61,7 +61,6 @@ const queryParams = queryString.parse(window.location.search);
 if (queryParams.decode && !Array.isArray(queryParams.decode)) {
   try {
     decodedAnswers.value = expandAnswers(queryParams.decode);
-    console.dir(decodedAnswers.value);
   } catch (error) {
     // Decode failed, query string must be invalid
     console.error(error);
@@ -137,9 +136,6 @@ function nextQuestion() {
 
     currentQuestion.value = upcomingQuestions.pop();
   } else {
-    // Done, go to results
-    // TODO
-    // alert(remainingVirtues[0]);
     currentQuestion.value = null;
 
     resultCode.value = compactAnswers(chosenAnswers);
@@ -170,7 +166,7 @@ nextQuestion();
   grid-template-columns: repeat(2, 1fr);
   $gap: 1.5rem;
   gap: $gap;
-  margin: 2rem;
+  margin: 2rem 0;
 
   &.chosen {
     .choice.active {
@@ -197,7 +193,7 @@ nextQuestion();
 }
 
 .choice {
-  padding: 1rem;
+  padding: 1rem 0.75rem;
 }
 
 .judgement {
