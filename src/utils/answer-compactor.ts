@@ -55,11 +55,11 @@ function compactAnswer(answer: Answer): string {
 }
 
 export function expandAnswers(compacted: string): Answer[] {
-  if (compacted.length % 2 !== 0) {
-    throw new Error('Expected compacted string of even length');
-  }
-
   const decoded = decode(compacted);
+
+  if (decoded.length % 2 !== 0) {
+    throw new Error('Expected decoded string of even length');
+  }
 
   const parts = decoded.match(/.{2}/g);
   const answers = parts.map(expandAnswer);

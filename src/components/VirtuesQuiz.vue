@@ -3,7 +3,11 @@
     <div class="virtues-quiz-component">
       <h1>Test of Virtues</h1>
 
-      <transition name="fade" mode="out-in" appear>
+      <div class="decoded-answers" v-if="decodedAnswers != null">
+        <DecodedAnswers :answers="decodedAnswers" />
+      </div>
+
+      <transition name="fade" mode="out-in" appear v-else>
         <div class="question" :key="currentQuestion.firstVirtue + ' vs ' + currentQuestion.secondVirtue" v-if="currentQuestion">
           <label>{{ currentQuestion.origPrompt }}</label>
 
@@ -48,6 +52,23 @@ import {
 } from '../models/virtues';
 import { Answer } from '../models/answer';
 import { compactAnswers, expandAnswers } from '../utils/answer-compactor';
+import queryString from 'query-string';
+import DecodedAnswers from './DecodedAnswers.vue';
+
+// Check for decode query string
+const decodedAnswers = ref<Answer[]>(null);
+const queryParams = queryString.parse(window.location.search);
+if (queryParams.decode && !Array.isArray(queryParams.decode)) {
+  try {
+    decodedAnswers.value = expandAnswers(queryParams.decode);
+    console.dir(decodedAnswers.value);
+  } catch (error) {
+    // Decode failed, query string must be invalid
+    console.error(error);
+  }
+}
+
+// Otherwise...
 
 let remainingVirtues = virtues.slice();
 let remainingQuestions = questions.slice();

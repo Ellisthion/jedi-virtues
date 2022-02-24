@@ -9,7 +9,7 @@ button {
 
   border: 3px solid $yellow;
 
-  transition: background-color 0.5s, color 0.5s, transform 0.5s;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s, opacity 0.5s;
 
   &:hover,
   &:focus,
