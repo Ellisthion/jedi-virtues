@@ -55,8 +55,8 @@ export const questions: Question[] = [
     first: 'Hold back, so you may honestly claim obedience',
     second: 'Aid your comrades, knowing you may deny it later',
 
-    firstConsequence: 'You would let your friends face death to follow your Master\'s orders. Was this risk what you intended?',
-    secondConsequence: 'You ignore the wisdom of your elders. Did you doubt your Master\'s knowledge or intent?',
+    firstConsequence: 'You would let your friends face death to follow your Master\'s orders. Is your word more important than their lives?',
+    secondConsequence: 'You distrust the wisdom of your elders. Are your lies truly for the best?',
   },
   {
     firstVirtue: 'Honesty',
@@ -81,7 +81,7 @@ export const questions: Question[] = [
     origFirst: 'Truthfully claim the gold',
     origSecond: 'Allow thy friend the large reward',
 
-    prompt: 'You and your friend are valiant but impoverished bounty hunters. You both go out to slay a mighty beast. Your friend thinks he slew it, but you did. When asked, do you...',
+    prompt: 'You and your friend are valiant but impoverished bounty hunters. You both go out to slay a rampaging rancor. Your friend thinks he slew it, but you did. When asked, do you...',
     first: 'Truthfully claim the credits',
     second: 'Allow your friend the large reward',
 
@@ -100,7 +100,7 @@ export const questions: Question[] = [
     first: 'Break your oath by speaking honestly',
     second: 'Uphold your honour by staying silent',
 
-    firstConsequence: 'You would so easily betray trust, and condemn another in the process? Is it your word or your actions that should be believed?',
+    firstConsequence: 'You would so easily betray trust, and condemn another in the process? Is it your words or your actions that should be believed?',
     secondConsequence: 'You would allow crime and corruption to be unpunished, to protect one who does not deserve it. Is this the Republic you protect?',
   },
   {
@@ -115,7 +115,7 @@ export const questions: Question[] = [
     first: 'Honestly express your doubt',
     second: 'Vouch for her, trusting in the Living Force',
 
-    firstConsequence: 'You question your friend, and obey the letter of the Jedi Code. Do you distrust your own tenuous connection to the Force?',
+    firstConsequence: 'You question your friend, and obey the letter of the Jedi Code. Do you distrust your own connection to the Force?',
     secondConsequence: 'You hide the truth and disobey the Jedi Code. Is your friend truly ready for the Trials?',
   },
   {
@@ -146,7 +146,7 @@ export const questions: Question[] = [
     second: 'Finish her, decisively ending her threat',
 
     firstConsequence: 'You allow a dangerous foe to survive, and she escapes later and kills many. How much blood is on your hands?',
-    secondConsequence: 'You ignore the Jedi Code. Is it your place to enact judgement?',
+    secondConsequence: 'You take her life, ignoring the Jedi Code. Is it your place to enact judgement?',
   },
   {
     firstVirtue: 'Compassion',
@@ -191,7 +191,7 @@ export const questions: Question[] = [
     second: 'Honour your oath to protect him, and ignore his business arrangements',
 
     firstConsequence: 'You go against your word and endanger the political situation of an entire sector. Will your actions even help those enslaved?',
-    secondConsequence: 'You ignore suffering and, by your inaction, support corruption. Do political machinations deserve your loyalty?',
+    secondConsequence: 'You ignore suffering and, by your inaction, support corruption. Are political machinations worth your loyalty?',
   },
   {
     firstVirtue: 'Compassion',
@@ -206,7 +206,7 @@ export const questions: Question[] = [
     second: 'Trust the Living Force and refuse',
 
     firstConsequence: 'You intervene in the natural cycle of life and death. Even as an act of mercy, will taking a life haunt you?',
-    secondConsequence: 'Your faith in the Force would cause a man to die in pain. Is this the path you follow?',
+    secondConsequence: 'Your faith in the Force would cause a man to die in pain. Is this the path you choose to follow?',
   },
   {
     firstVirtue: 'Compassion',
@@ -235,8 +235,8 @@ export const questions: Question[] = [
     first: 'Stay quiet and bear the slurs',
     second: 'Rise and demand an apology',
 
-    firstConsequence: 'You hold your tongue rather than stand up for what is fair and just. How much else you let slide by?',
-    secondConsequence: 'You endanger the treaty to counter a verbal slight. Do you understand what\'s at stake?',
+    firstConsequence: 'You hold your tongue rather than stand up for what is fair and just. How much else do you let slide by?',
+    secondConsequence: 'You endanger the treaty to counter a verbal slight. Is this justice or pettiness?',
   },
   {
     firstVirtue: 'Valour',
@@ -296,7 +296,7 @@ export const questions: Question[] = [
     second: 'Decline, knowing your powers would give you certain victory',
 
     firstConsequence: 'You know your powers give you great speed and strength, yet you seek to prove it? Will snatching victory from the locals sate your pride?',
-    secondConsequence: 'Do you believe your strength in the Force is unnatural or unfair? Do you fear to use your own abilities, or to test yourself?',
+    secondConsequence: 'Do you believe your strength in the Force is unnatural or unfair? Do you fear your own abilities?',
   },
   {
     firstVirtue: 'Justice',
@@ -381,11 +381,11 @@ export const questions: Question[] = [
     origFirst: 'Sacrifice thy life of purity to aid thy kin',
     origSecond: 'decline & follow thy Spirit\'s call',
 
-    prompt: 'You have spent your life peacefully practicing meditation and focus. As the war escalates, you are asked to take an active role training overseeing the production and training of clones on Kamino. Do you...',
+    prompt: 'You have spent your life peacefully practicing meditation and focus. As the war escalates, you are asked to take an active role overseeing the production and training of clones on Kamino. Do you...',
     first: 'Sacrifice your life of tranquility to aid the Jedi Order',
     second: 'Decline and follow the call of the Living Force',
 
-    firstConsequence: 'You forego your own desires to serve the needs of others, but you take your wisdom and experience with you. How many Padawans could have benefited from your guidance?',
+    firstConsequence: 'You forego your own desires to serve the needs of others, but you take your wisdom and experience with you to a distance planet. How many Padawans on Coruscant could have benefitted from your guidance?',
     secondConsequence: 'You trust in the Force, but what good is your wisdom and guidance if the Jedi Order falls?',
   },
   {
@@ -411,7 +411,7 @@ export const questions: Question[] = [
     origFirst: 'Honor thy pledge to wed',
     origSecond: 'follow thy Spiritual crusade',
 
-    prompt: 'You are a Jedi Master and find a young child, strong in the Force, who you believe needs Jedi training. However, you already have a Padawan, and the Jedi Code forbids having more than one Padawan. Do you...',
+    prompt: 'You are a Jedi Master and find a young child, strong in the Force, who you believe needs Jedi training. However, you already have a Padawan, and the Jedi Code forbids having more than one. Do you...',
     first: 'Convince another Jedi to train the child',
     second: 'Insist on training the child anyway',
 
@@ -426,7 +426,7 @@ export const questions: Question[] = [
     origFirst: 'Choose the Honorable life of a Paladin, striving for Truth and Courage',
     origSecond: 'Choose the Humble life of a Shepherd, and a world of simplicity and peace',
 
-    prompt: 'The Jedi Council asks you to volunteer to represent them in Senate during discussion of the war. Do you...',
+    prompt: 'The Jedi Council asks you to volunteer to represent them in the Senate during war deliberations. Do you...',
     first: 'Accept the position to represent the Jedi Order',
     second: 'Suggest another take the role',
 
@@ -441,7 +441,7 @@ export const questions: Question[] = [
     origFirst: 'Become an acolyte in the Spiritual order',
     origSecond: 'Become an assistant to a humble village cobbler',
 
-    prompt: 'The Jedi Council has asked for a volunteer as a teacher, to educate younglings about the Living Force. Do you...',
+    prompt: 'The Jedi Council has asked for volunteers as a teachers, to educate younglings about the Living Force. Do you...',
     first: 'Volunteer for the position',
     second: 'Suggest another for the role',
 
