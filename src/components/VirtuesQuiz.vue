@@ -11,8 +11,6 @@
         <div class="question" :key="currentQuestion.firstVirtue + ' vs ' + currentQuestion.secondVirtue" v-if="currentQuestion">
           <label>{{ currentQuestion.prompt }}</label>
 
-          <p>Debug: {{ currentQuestion.firstVirtue }} vs {{ currentQuestion.secondVirtue }}</p>
-
           <div class="choice-container" :class="{ 'chosen': currentChosen != null }">
             <button type="button" class="choice" :class="{ 'active': currentChosen === currentQuestion.firstVirtue }" @click="answerChosen(currentQuestion.firstVirtue, currentQuestion.secondVirtue)">
               {{ currentQuestion.first }}
