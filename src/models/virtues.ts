@@ -82,7 +82,7 @@ export const questions: Question[] = [
     origSecond: 'Allow thy friend the large reward',
 
     prompt: 'You and your friend are valiant but impoverished bounty hunters. You both go out to slay a rampaging rancor. Your friend thinks he slew it, but you did. When asked, do you...',
-    first: 'Truthfully claim the credits',
+    first: 'Truthfully claim credit',
     second: 'Allow your friend the large reward',
 
     firstConsequence: 'You would dash your friend\'s hopes of escaping this life. Is that what you intended?',
