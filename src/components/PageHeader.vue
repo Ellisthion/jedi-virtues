@@ -8,7 +8,7 @@
 .page-header-component {
   img {
     width: 100%;
-    max-width: min(100%, 40rem);
+    max-width: min(100%, 20rem);
     margin: 0 auto;
     mix-blend-mode: lighten;
   }

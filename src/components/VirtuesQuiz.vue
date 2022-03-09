@@ -9,21 +9,21 @@
 
       <transition name="fade" mode="out-in" appear v-else>
         <div class="question" :key="currentQuestion.firstVirtue + ' vs ' + currentQuestion.secondVirtue" v-if="currentQuestion">
-          <label>{{ currentQuestion.prompt }}</label>
+          <label>{{ prettyText(currentQuestion.prompt) }}</label>
 
           <div class="choice-container" :class="{ 'chosen': currentChosen != null }">
             <button type="button" class="choice" :class="{ 'active': currentChosen === currentQuestion.firstVirtue }" @click="answerChosen(currentQuestion.firstVirtue, currentQuestion.secondVirtue)">
-              {{ currentQuestion.first }}
+              {{ prettyText(currentQuestion.first) }}
             </button>
 
             <button type="button" class="choice" :class="{ 'active': currentChosen === currentQuestion.secondVirtue }" @click="answerChosen(currentQuestion.secondVirtue, currentQuestion.firstVirtue)">
-              {{ currentQuestion.second }}
+              {{ prettyText(currentQuestion.second) }}
             </button>
           </div>
 
           <transition name="fade-delay" appear>
             <div class="after-choice" v-if="currentChosen">
-              <p>{{ currentChosen === currentQuestion.firstVirtue ? currentQuestion.firstConsequence : currentQuestion.secondConsequence }}</p>
+              <p>{{ prettyText(currentChosen === currentQuestion.firstVirtue ? currentQuestion.firstConsequence : currentQuestion.secondConsequence) }}</p>
 
               <transition name="fade-slow" appear>
                 <button type="button" @click="nextQuestion()">Next</button>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="judgement" v-else>
-          <label>You have been judged. Send this code to your gamemaster.</label>
+          <label>{{ prettyText('You have been judged. Send this code to your gamemaster.') }}</label>
 
           <p class="code-result">{{ resultCode }}</p>
         </div>
@@ -52,6 +52,7 @@ import { Answer } from '../models/answer';
 import { compactAnswers, expandAnswers } from '../utils/answer-compactor';
 import queryString from 'query-string';
 import DecodedAnswers from './DecodedAnswers.vue';
+import { prettyText } from '../utils/pretty-text';
 
 // Check for decode query string
 const decodedAnswers = ref<Answer[]>(null);
