@@ -138,6 +138,9 @@ function nextQuestion() {
     currentQuestion.value = null;
 
     resultCode.value = compactAnswers(chosenAnswers);
+
+    // Skip straight to end
+    decodedAnswers.value = chosenAnswers;
   }
 }
 
